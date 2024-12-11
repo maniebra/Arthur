@@ -26,3 +26,11 @@ export const BODY_PARSER = require("body-parser")
 // SERVER VARIABLES
 export const HOST: string = process.env.HOST || "0.0.0.0";
 export const PORT: string = process.env.PORT || "3000";
+
+/*=======================================================*/
+/*                        [ APPS ]                       */
+/*=======================================================*/
+
+export const APPS = [
+    "users"
+]
