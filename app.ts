@@ -9,13 +9,18 @@ const path = require("path");
 
 const app = express();
 
-app.use(config.LOGGER("dev"));
+app.use(config.LOGGER);
 app.use(config.BODY_PARSER.json());
 app.use(config.BODY_PARSER.urlencoded({ extended: false }));
 app.use(config.COOKIE_PARSER());
 app.use(express.static(path.join(__dirname, "statics")));
 
-// SETUP ROUTERS
+// SETUP ROUTERS FOR CONTRIB APPS
+config.CONTRIB_APPS.forEach((contribApp: string) => {
+  app.use(`/${contribApp}`, require(`@contrib/${contribApp}/routes.ts`));
+});
+
+// SETUP ROUTERS FOR OUR OWN APPS
 config.APPS.forEach((installedApp: string) => {
   app.use(`/${installedApp}`, require(`@apps/${installedApp}/routes.ts`));
 });

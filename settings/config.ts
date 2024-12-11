@@ -14,7 +14,7 @@ dotenv.config();
 //  (CHANGE IF YOU NEED OTHER MODULES)
 
 // APP.TS TOOLS
-export const LOGGER = require("morgan");
+export const LOGGER = require("morgan")("dev");
 export const COOKIE_PARSER = require("cookie-parser")
 export const BODY_PARSER = require("body-parser")
 
@@ -33,4 +33,8 @@ export const PORT: string = process.env.PORT || "3000";
 
 export const APPS = [
     "users"
+]
+
+export const CONTRIB_APPS = [
+    "swagger"
 ]
