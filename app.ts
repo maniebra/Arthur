@@ -17,7 +17,7 @@ app.get("/", (req: Request, res: Response) => {
   res.send("index");
 });
 
-app.listen(config.PORT, () => {
+app.listen(config.PORT, config.HOST, () => {
   console.log(`Server is running on ${config.HOST}, port: ${config.PORT}`);
 });
 
