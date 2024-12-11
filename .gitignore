@@ -1,0 +1,24 @@
+# dev files
+**/*.env
+**/*.log
+**/*.pyc
+**/*.swp
+**/*.swo
+**/*.sqlite3
+**/*.db
+**/*.db-journal
+**/*.bak
+**/*.orig
+**/*.tmp
+**/*.tmp.*
+**/*.tmp-*
+**/*.tmp_*
+**/*.tmp~
+
+# dev directories (GENERAL)
+**/.vscode/
+**/.idea/
+
+
+# dev directories (BACKEND)
+**/node_modules/
