@@ -5,6 +5,7 @@
 **/*.swp
 **/*.swo
 **/*.sqlite3
+**/*.sqlite
 **/*.db
 **/*.db-journal
 **/*.bak
