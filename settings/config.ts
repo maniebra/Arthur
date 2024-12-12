@@ -35,9 +35,9 @@ export const DB_TYPE: string = process.env.DB_TYPE || "sqlite";
 /*=======================================================*/
 
 export const APPS = [
-    "users"
 ]
 
 export const CONTRIB_APPS = [
+    "users",
     "swagger"
 ]
