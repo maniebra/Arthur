@@ -9,7 +9,7 @@ config.APPS.forEach((installedApp: string) => {
 });
 
 export const AppDataSource = new DataSource({
-  type: 'sqlite',
+  type: config.DB_TYPE,
   database: 'db.sqlite',
   synchronize: true,
   entities: [...entities],

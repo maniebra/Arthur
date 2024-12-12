@@ -27,6 +27,9 @@ export const BODY_PARSER = require("body-parser")
 export const HOST: string = process.env.HOST || "0.0.0.0";
 export const PORT: string = process.env.PORT || "3000";
 
+// DATABASE VARIABLES
+export const DB_TYPE: string = process.env.DB_TYPE || "sqlite";
+
 /*=======================================================*/
 /*                        [ APPS ]                       */
 /*=======================================================*/

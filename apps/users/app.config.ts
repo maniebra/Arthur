@@ -1,5 +1,8 @@
-let CONFIG: Record<string, any> = {
+import { Config } from "@contrib/utils/types/app.config";
+
+let CONFIG: Config = {
     "router_name": "users",
 }
 
-export default CONFIG;
+
+module.exports = CONFIG;

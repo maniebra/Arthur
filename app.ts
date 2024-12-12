@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import { AppDataSource } from "@utils/data_source";
+import { AppDataSource } from "@contrib/utils/database/data_source";
 import "reflect-metadata";
 
 const config = require("@settings/config.ts");
@@ -17,12 +17,14 @@ app.use(express.static(path.join(__dirname, "statics")));
 
 // SETUP ROUTERS FOR CONTRIB APPS
 config.CONTRIB_APPS.forEach((contribApp: string) => {
-  app.use(`/${contribApp}`, require(`@contrib/${contribApp}/routes.ts`));
+  const routerName = require(`@contrib/apps/${contribApp}/app.config.ts`).router_name;
+  app.use(`/${routerName}`, require(`@contrib/apps/${contribApp}/routes.ts`));
 });
 
 // SETUP ROUTERS FOR OUR OWN APPS
 config.APPS.forEach((installedApp: string) => {
-  app.use(`/${installedApp}`, require(`@apps/${installedApp}/routes.ts`));
+  const routerName = require(`@apps/${installedApp}/app.config.ts`).router_name;
+  app.use(`/${routerName}`, require(`@apps/${installedApp}/routes.ts`));
 });
 
 AppDataSource.initialize()

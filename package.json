@@ -6,7 +6,8 @@
   "scripts": {
     "build": "pnpm dlx tsc",
     "start": "node dist/app.js",
-    "dev": "nodemon -r tsconfig-paths/register app.ts"
+    "dev": "nodemon -r tsconfig-paths/register app.ts",
+    "newapp": "node -r tsconfig-paths/register ./contrib/utils/newapp/create_new_app.ts"
   },
   "keywords": [],
   "author": "",

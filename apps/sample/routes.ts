@@ -6,7 +6,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /users/test:
+ * /sample/test:
  *   get:
  *     summary: Example endpoint
  *     responses:
