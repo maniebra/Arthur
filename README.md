@@ -42,5 +42,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 
-GitHub Issues: For bug reports and feature requests.
-Email: mani.ebra@gmail.com
+- GitHub Issues: For bug reports and feature requests.
+- Email: mani.ebra@gmail.com
