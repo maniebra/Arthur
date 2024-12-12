@@ -55,3 +55,37 @@ export async function register(req: Request, res: Response) {
     }
 }
 
+
+export async function authenticate(req: Request, res: Response) {
+    const userData = req.body;
+
+    const username = userData.username;
+    const password = userData.password;
+
+    if (!username || !password) {
+        res.status(400).json({ error: "Please fill all fields!" });
+        return;
+    }
+
+    const user = await models.User.findOneBy({ username });
+
+    if (!user) {
+        res.status(400).json({ error: "User does not exist!" });
+        return;
+    }
+
+    const validPassword = await bcrypt.compare(password, user.password);
+
+    if (!validPassword) {
+        res.status(400).json({ error: "Invalid password!" });
+        return;
+    }
+
+    const token = jwt.sign(
+        { id: user.id, username: user.username },
+        config.JWT_SECRET,
+        { expiresIn: config.JWT_EXPIRATION_TIME }
+    );
+
+    res.status(200).json({ user, token });
+}
