@@ -7,11 +7,27 @@ const router = express.Router();
 /**
  * @swagger
  * /$1/test:
- *   get:
- *     summary: Example endpoint
+ *   post:
+ *     tags: [$1]
+ *     summary: User registration endpoint
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               param1:
+ *                 type: string
+ *                 description: 1st param
+ *               param2:
+ *                 type: string
+ *                 description: 2nd param
  *     responses:
  *       200:
  *         description: A successful response
+ *       400:
+ *         description: A bad request response
  */
 router.get("/test", controller.sample);
 
