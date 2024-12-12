@@ -17,9 +17,6 @@ class User extends BaseEntity {
     @Column({nullable: true})
     lastName!: string;
 
-    @Column({ unique: true})
-    email!: string;
-
     @Column({ default: false })
     isPremium!: boolean;
 
@@ -31,7 +28,13 @@ class User extends BaseEntity {
 
     @Column({ default: false })
     isVerified!: boolean;
+
+    @Column({default: new Date().toISOString()})
+    lastLogin!: Date;
+
+    @Column({default: new Date().toISOString()})
+    dateJoined!: Date;
 }
 
 
-module.exports = [User]
+export { User }

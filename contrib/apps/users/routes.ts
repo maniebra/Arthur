@@ -6,13 +6,30 @@ const router = express.Router();
 
 /**
  * @swagger
- * /users/test:
- *   get:
- *     summary: Example endpoint
+ * /users/register:
+ *   post:
+ *     summary: User registration endpoint
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *                 description: The username of the user
+ *               password:
+ *                 type: string
+ *                 description: The password of the user
+ *               confirm_password:
+ *                  type: string
+ *                  description: The confirmation password of the user
  *     responses:
  *       200:
  *         description: A successful response
  */
-router.get("/test", controller.sample);
+
+router.post("/register", controller.register);
 
 module.exports = router;
