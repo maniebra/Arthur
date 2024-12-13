@@ -1,4 +1,4 @@
-!(https://repository-images.githubusercontent.com/902262905/fce5818e-f90b-4c43-824c-2fb22e27d617)[ARTHUR]
+![ARTHUR](https://repository-images.githubusercontent.com/902262905/fce5818e-f90b-4c43-824c-2fb22e27d617)
 
 # Arthur
 
